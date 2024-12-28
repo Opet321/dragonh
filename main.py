@@ -15,7 +15,7 @@ from utils.helpers.updater import restart
 from utils.config import(
     api_id,
     api_hash, 
-    bot_token,
+    token,
     session_string,
     version
 )
@@ -25,19 +25,30 @@ script_path = os.path.dirname(os.path.realpath(__file__))
 if script_path != os.getcwd():
     os.chdir(script_path)
 
+
+bot = Client(
+    name="Feedback",
+    api_id=2040,
+    api_hash="b18441a1ff607e10a989891a5462e627",
+    bot_token=token,
+    in_memory=True,
+    sleep_threshold=30,
+    plugins=dict(root="plugins"),
+    parse_mode=ParseMode.HTML
+)
+
+
+
 app = Client(
     "Dragon-Fork",
     api_id=api_id,
     api_hash=api_hash, 
-    bot_token=bot_token,
     session_string=session_string,
     workdir=script_path,
     device_model=version,
     sleep_threshold=30,
     parse_mode=ParseMode.HTML,
 )
-
-
 
 
 async def main():
@@ -97,3 +108,4 @@ async def main():
 
 if __name__ == "__main__":
     app.run(main())
+    
