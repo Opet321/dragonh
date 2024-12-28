@@ -55,8 +55,8 @@ async def main():
         await bot.start()  # Mulai client bot
     except (errors.NotAcceptable, errors.Unauthorize) as e:
         logging.error(
-            f"{e.class.name}: {e}\n"
-            )
+            f"{e.__class__.__name__}: {e}\n"  # Perbaikan di sini
+        )
         restart()
 
     success_modules = 0
