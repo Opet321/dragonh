@@ -10,9 +10,10 @@ from . import *
 
 
 cli = motor.motor_asyncio.AsyncIOMotorClient(db_url) 
-users = users  
+users = create.users
+messages = create.messages
 mongo = MongoCli(db_url) 
-messages = messages 
+
  
  
 async def _message_id(message_id): 
