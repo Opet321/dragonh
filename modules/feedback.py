@@ -4,7 +4,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message  
 from motor.motor_asyncio import AsyncIOMotorClient as MongoCli 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from utils.config import db_url
+from utils.config import db_url, owner
 from . import * 
  
 cli = motor.motor_asyncio.AsyncIOMotorClient(db_url) 
@@ -40,7 +40,7 @@ async def _start(client: Client, message: Message):
  
  
  
-@app.on_message(filters.chat(int(OWNER))) 
+@app.on_message(filters.chat(int(owner))) 
 async def _owner(client: Client, message: Message): 
     last_msg = None  # Memberikan nilai awal untuk last_msg 
     async for msg in messages.find(): 
