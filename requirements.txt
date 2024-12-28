@@ -3,6 +3,5 @@ pyrogram
 tgcrypto
 pymongo[srv]
 dnspython 
-motor==3.0.0
 meval
 requests
