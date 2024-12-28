@@ -15,7 +15,8 @@ from utils.config import (
     api_hash,
     bot_token,
     session_string,
-    version
+    version,
+    user_id # Asumsikan user_id ada di config
 )
 
 script_path = os.path.dirname(os.path.realpath(__file__))
@@ -55,7 +56,7 @@ async def main():
         await bot.start()  # Mulai client bot
     except (errors.NotAcceptable, errors.Unauthorize) as e:
         logging.error(
-            f"{e.__class__.__name__}: {e}\n"  # Perbaikan di sini
+            f"{e.__class__.__name__}: {e}\n"
         )
         restart()
 
@@ -97,12 +98,12 @@ async def main():
         db.remove("core.updater", "restart_info")
 
     logging.info("Dragon-Fork started!")
-    await app.send_message("me", "Started!")  # Menggunakan app untuk mengirim pesan
-    await bot.send_message("me", "Bot Started!") # Menggunakan bot untuk mengirim pesan
+    await app.send_message(user_id, "Started!")  # Menggunakan app untuk mengirim pesan ke user_id
+    await bot.send_message(user_id, "Bot Started!")  # Menggunakan bot untuk mengirim pesan ke user_id
 
     await idle()
-    await app.stop() # stop app
-    await bot.stop()  # Stop bot
+    await app.stop()
+    await bot.stop()
 
 if __name__ == "__main__":
     app.run(main())
