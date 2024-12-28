@@ -37,11 +37,7 @@ app = Client(
     parse_mode=ParseMode.HTML,
 )
 
-setattr(
-    app,
-    "_voicechat",
-    GroupCallFactory(app).get_group_call()
-)
+
 
 
 async def main():
