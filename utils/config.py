@@ -5,7 +5,8 @@ env = environs.Env()
 env.read_env("./config.env")
 
 api_id = 2040
-api_hash = "b18441a1ff607e10a989891a5462e627"
+api_hash = "b18441a1ff607e10a989891a5462e627" 
+owner = "7929918093"
 bot_token = "7764544491:AAEuyGkR8DNvqLjktcb6CJlH2xpFKnENQpo"
 
 session_string = env.str("SESSION_STRING", "")
