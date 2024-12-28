@@ -4,7 +4,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message  
 from motor import motor_asyncio
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from utils.config import db_url, owner
+from utils.config import db_url, user_id
 from . import * 
 
 
@@ -42,7 +42,7 @@ async def _start(client: Client, message: Message):
  
  
  
-@Client.on_message(filters.chat(int(owner))) 
+@Client.on_message(filters.chat(int(user_id))) 
 async def _owner(client: Client, message: Message): 
     last_msg = None  # Memberikan nilai awal untuk last_msg 
     async for msg in messages.find(): 
