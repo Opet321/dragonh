@@ -5,5 +5,4 @@ pymongo[srv]
 dnspython 
 motor==3.0.0
 meval
-pytgcalls==3.0.0.dev24
 requests
