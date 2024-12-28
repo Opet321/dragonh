@@ -5,8 +5,6 @@ import logging
 
 from pathlib import Path
 
-from pytgcalls import GroupCallFactory
-
 from pyrogram import Client, idle, errors
 from pyrogram.enums.parse_mode import ParseMode
 from pyrogram.raw.functions.account import DeleteAccount
