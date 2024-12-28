@@ -20,7 +20,7 @@ async def _message_id(message_id):
  return message_id 
 
 
-@app.on_message(filters.command("start"))
+@Client.on_message(filters.command("start"))
 async def _start(client: Client, message: Message):
     user_db = await users.find_one({"user_id": f"{message.from_user.id}"})
     if not user_db:
@@ -42,7 +42,7 @@ async def _start(client: Client, message: Message):
  
  
  
-@app.on_message(filters.chat(int(owner))) 
+@Client.on_message(filters.chat(int(owner))) 
 async def _owner(client: Client, message: Message): 
     last_msg = None  # Memberikan nilai awal untuk last_msg 
     async for msg in messages.find(): 
@@ -74,7 +74,7 @@ async def _owner(client: Client, message: Message):
             await message.reply_text("List is empty, cannot retrieve last message.") 
  
  
-@app.on_message(filters.all & filters.private & ~filters.me) 
+@Client.on_message(filters.all & filters.private & ~filters.me) 
 async def _user(client: Client, message: Message): 
     user_db = await users.find_one({"user_id": f"{message.from_user.id}"}) 
     if not user_db: 
