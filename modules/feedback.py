@@ -7,11 +7,12 @@ from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from utils.config import db_url, owner
 from . import * 
- 
+
+
 cli = motor.motor_asyncio.AsyncIOMotorClient(db_url) 
-users = db.users  
+users = users  
 mongo = MongoCli(db_url) 
-messages = db.messages 
+messages = messages 
  
  
 async def _message_id(message_id): 
