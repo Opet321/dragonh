@@ -4,12 +4,12 @@ from pyrogram import Client, filters
 from pyrogram.types import Message  
 from motor.motor_asyncio import AsyncIOMotorClient as MongoCli 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from naya.config import MONGO_URL, OWNER 
+from utils.config import db_url
 from . import * 
  
-cli = motor.motor_asyncio.AsyncIOMotorClient(MONGO_URL) 
+cli = motor.motor_asyncio.AsyncIOMotorClient(db_url) 
 users = db.users  
-mongo = MongoCli(MONGO_URL) 
+mongo = MongoCli(db_url) 
 messages = db.messages 
  
  
