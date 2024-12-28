@@ -29,7 +29,7 @@ app = Client(
     "Dragon-Fork",
     api_id=api_id,
     api_hash=api_hash, 
-    bot_token=token,
+    bot_token=bot_token,
     session_string=session_string,
     workdir=script_path,
     device_model=version,
