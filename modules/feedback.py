@@ -1,20 +1,17 @@
-import motor.motor_asyncio
 from asyncio import sleep  
 from time import sleep 
 from pyrogram import Client, filters 
 from pyrogram.types import Message  
-from motor.motor_asyncio import AsyncIOMotorClient as MongoCli 
+from motor import motor_asyncio
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from utils.config import db_url, owner
 from . import * 
 
 
-create = cli.database
-
-cli = motor.motor_asyncio.AsyncIOMotorClient(db_url) 
+connect = motor_asyncio.AsyncIOMotorClient(db_url)
+create = connect.database
 users = create.users
 messages = create.messages
-mongo = MongoCli(db_url) 
 
  
  
