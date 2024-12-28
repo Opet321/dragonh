@@ -15,7 +15,7 @@ from utils.helpers.updater import restart
 from utils.config import(
     api_id,
     api_hash, 
-    token,
+    bot_token,
     session_string,
     version
 )
@@ -30,7 +30,7 @@ bot = Client(
     name="Feedback",
     api_id=2040,
     api_hash="b18441a1ff607e10a989891a5462e627",
-    bot_token=token,
+    bot_token=bot_token,
     in_memory=True,
     sleep_threshold=30,
     plugins=dict(root="plugins"),
