@@ -16,7 +16,8 @@ from utils.loader import _loader
 from utils.helpers.updater import restart
 from utils.config import(
     api_id,
-    api_hash,
+    api_hash, 
+    bot_token,
     session_string,
     version
 )
@@ -29,7 +30,8 @@ if script_path != os.getcwd():
 app = Client(
     "Dragon-Fork",
     api_id=api_id,
-    api_hash=api_hash,
+    api_hash=api_hash, 
+    bot_token=token,
     session_string=session_string,
     workdir=script_path,
     device_model=version,
