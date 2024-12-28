@@ -9,7 +9,7 @@ from utils.config import db_url, owner
 from . import * 
 
 
-create = connect.database
+create = cli.database
 
 cli = motor.motor_asyncio.AsyncIOMotorClient(db_url) 
 users = create.users
