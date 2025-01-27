@@ -2,7 +2,7 @@
 
 import pymongo
 
-from utils.config import db_url, db_name
+from config import MONGODB_URL, db_name
 
 
 class Database:
